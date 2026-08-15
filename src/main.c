@@ -82,10 +82,11 @@ int main(int argc, char *argv[]) {
     SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
 
     if (texture == NULL) {
-        // Here. I actually need to close some stuff but too lazy for now
         printf("Cannot create texture");
         return -1;
     }
+
+    SDL_SetTextureScaleMode(texture, SDL_ScaleModeBest);
 
     SDL_Rect rect;
     rect.x = 0;
